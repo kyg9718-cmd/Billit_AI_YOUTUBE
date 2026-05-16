@@ -1,0 +1,12 @@
+{
+  "ceo": "qwen2.5-coder:7b",
+  "youtube": "qwen2.5-coder:7b",
+  "instagram": "qwen2.5-coder:7b",
+  "designer": "qwen2.5-coder:7b",
+  "developer": "qwen2.5-coder:7b",
+  "business": "qwen2.5-coder:7b",
+  "secretary": "qwen2.5-coder:7b",
+  "editor": "qwen2.5-coder:7b",
+  "writer": "qwen2.5-coder:7b",
+  "researcher": "qwen2.5-coder:7b"
+}

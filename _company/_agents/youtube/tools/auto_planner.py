@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Auto Planner — runs trend_sniper.py on a fixed interval for a chosen
 duration (e.g. overnight). Reads its config from auto_planner.json."""
-import os, json, time, datetime, subprocess, sys
+import os, json, time, datetime, subprocess, sys, io
+
+# v2.89.72 — 윈도우 터미널(CP949) 이모지 출력 오류 방지
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(HERE, "auto_planner.json")
@@ -36,7 +41,7 @@ def main():
         sys.exit(1)
     # 첫 실행 전 trend_sniper.py가 정상 동작하는지 빠르게 검증
     print("🔍 trend_sniper.py 첫 회차 검증 중 (~30초)...")
-    test_proc = subprocess.run([sys.executable, SNIPER_PATH], capture_output=True, text=True, timeout=300)
+    test_proc = subprocess.run([sys.executable, SNIPER_PATH], capture_output=True, text=True, timeout=300, encoding='utf-8')
     if test_proc.returncode != 0:
         print(f"❌ trend_sniper.py 검증 실패 (exit {test_proc.returncode})")
         print("   먼저 trend_sniper.py 단독으로 ▶ 실행해서 설정·키워드·LLM 연결 확인 후 재시도.")

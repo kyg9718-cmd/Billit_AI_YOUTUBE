@@ -1,2 +1,3 @@
 {"role":"user","text":"시작","ts":1778831566998}
 {"role":"assistant","text":"✅ 네, 시작하셨습니다. 어떤 작업을 도와드릴까요? 혹시 유튜브 영상 주제 분석을 원하신다면, 이전에 안내드린 대로 API 키와 채널 ID를 먼저 설정해주셔야 분석을 진행할 수 있습니다.","ts":1778831594180}
+{"role":"user","text":"������ YouTube ���� / ä�� ���� ������\n  API Ű            : AIza��Vt4\n  �� ä�� �ڵ�       : (����)\n  �� ä�� ID        : UCooT-Vx9a3svxyrdkABOZUQ\n  ���� ä�� (0��) : (����)\n  ���� ä�� (0��): (����)\n  �ڷ��׷�          : �‌��� (���� �˸� ��Ȱ��)\n  Ollama URL        : http://127.0.0.1:11434\n  �м� ��          : qwen2.5\nTraceback (most recent call last):\n  File \"d:\\billit_AI\\_company\\_agents\\youtube\\tools\\youtube_account.py\", line 46, in <module>\n    main()\n  File \"d:\\billit_AI\\_company\\_agents\\youtube\\tool","ts":1778927314339}

@@ -9,7 +9,12 @@ trend_sniper.json. If a key exists in both, trend_sniper.json wins.
 
 Requires:  pip install google-api-python-client requests
 """
-import os, json, time, random, datetime, sys
+import os, json, time, random, datetime, sys, io
+
+# v2.89.72 — 윈도우 터미널(CP949) 이모지 출력 오류 방지
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(HERE, "trend_sniper.json")

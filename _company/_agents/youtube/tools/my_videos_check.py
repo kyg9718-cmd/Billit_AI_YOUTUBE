@@ -7,10 +7,15 @@
 
 Reads YOUTUBE_API_KEY + MY_CHANNEL_HANDLE/ID from youtube_account.json.
 Reads LOOKBACK_DAYS / TOP_N / COMMENT_SAMPLES from my_videos_check.json."""
-import os, json, sys, time, datetime, re, statistics, warnings, html as html_lib
+import os, json, sys, time, datetime, re, statistics, warnings, html as html_lib, io
 from collections import Counter
 # v2.89.49 — DeprecationWarning(utcnow 등) 노이즈 제거. 사용자 채팅창 출력에 끼면 못생김.
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# v2.89.72 — 윈도우 터미널(CP949) 이모지 및 한글 출력 오류 방지
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ACCOUNT = os.path.join(HERE, "youtube_account.json")

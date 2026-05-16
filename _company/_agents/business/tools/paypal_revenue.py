@@ -18,8 +18,13 @@ config (paypal_revenue.json):
 발급: https://developer.paypal.com/dashboard/applications → Apps & Credentials
 샌드박스 테스트: sandbox.paypal.com 계정 무료 생성 가능
 """
-import os, sys, json, base64, urllib.request, urllib.parse, urllib.error
+import os, sys, json, base64, urllib.request, urllib.parse, urllib.error, io
 from datetime import datetime, timedelta, timezone
+
+# v2.89.72 — 윈도우 터미널(CP949) 이모지 및 한글 출력 오류 방지
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
